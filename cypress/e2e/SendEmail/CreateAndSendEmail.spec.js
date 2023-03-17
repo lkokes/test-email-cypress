@@ -1,5 +1,5 @@
 
-import {Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+import {Given, When, Then, And } from 'cypress-cucumber-preprocessor/steps'
 
 Given('Navigate to login page', () => {
   cy.visit('https://user.centrum.sk/')
@@ -39,7 +39,7 @@ Then('You create an email message', () => {
     })
 })
 
-Then('You click on send email button', () => {
+And('You click on send email button', () => {
   cy.get('#qa_email_send_bottom > .b-listing-green > .b-inner > .b-content')
     .click()
 })
