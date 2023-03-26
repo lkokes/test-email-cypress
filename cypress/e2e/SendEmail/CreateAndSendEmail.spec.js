@@ -19,17 +19,18 @@ Then('Email form is displayed', () => {
     .should('be.visible')
 })
 
-When('User creates an email message', () => {
-  //add recipient
+When(`User adds the recipient's email address`, () => {
   cy.get('#smart_input_to')
-    .click({force: true})
-    .type('lkokesova@gmail.com', {force: true})
+    .click({ force: true })
+    .type('lkokesova@gmail.com', { force: true })
+})  
   
-  //add subject
+And('User adds a subject line', () => {
   cy.get('#subject_input')
     .type('cypress test')
-  
-  //add email body
+})
+
+And('User adds an email body', () => {
   cy.get('#mail_composer_body_ifr') 
     .then($frame => $frame[0].contentWindow) 
     .its('document.body')

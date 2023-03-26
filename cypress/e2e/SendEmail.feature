@@ -7,7 +7,9 @@ Feature: Send email feature
         When User is logged into his account
         And User clicks on write email button
         Then Email form is displayed
-        When User creates an email message
+        When User adds the recipient's email address
+        And User adds a subject line
+        And User adds an email body
         And User clicks on send email button
         Then Email should be sent
         And User can logout
