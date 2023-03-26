@@ -1,13 +1,13 @@
 Feature: Send email feature
 
-    You are able to login, send email and logout from your account.
+    User is able to login, send email and logout from his account.
 
     Scenario: Logging in, sending an email and logging out
-        Given Navigate to login page
-        When You are logged in
-        Then You click on write email button
+        Given User navigates to login page centrum.sk
+        When User is logged into his account
+        And User clicks on write email button
         Then Email form is displayed
-        Then You create an email message
-        And You click on send email button
+        When User creates an email message
+        And User clicks on send email button
         Then Email should be sent
-        Then You can logout
+        And User can logout

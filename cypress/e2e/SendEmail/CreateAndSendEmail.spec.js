@@ -1,15 +1,15 @@
 
 import {Given, When, Then, And } from 'cypress-cucumber-preprocessor/steps'
 
-Given('Navigate to login page', () => {
+Given('User navigates to login page centrum.sk', () => {
   cy.visit('https://user.centrum.sk/')
 })
 
-When('You are logged in', () => {
+When('User is logged into his account', () => {
   cy.login(Cypress.env('username'), Cypress.env('password'), { log: false });
 })
 
-Then('You click on write email button', () => {
+And('User clicks on write email button', () => {
   cy.get('#compose_button')
     .click()
 })
@@ -19,7 +19,7 @@ Then('Email form is displayed', () => {
     .should('be.visible')
 })
 
-Then('You create an email message', () => {
+When('User creates an email message', () => {
   //add recipient
   cy.get('#smart_input_to')
     .click({force: true})
@@ -39,7 +39,7 @@ Then('You create an email message', () => {
     })
 })
 
-And('You click on send email button', () => {
+And('User clicks on send email button', () => {
   cy.get('#qa_email_send_bottom > .b-listing-green > .b-inner > .b-content')
     .click()
 })
@@ -49,6 +49,6 @@ Then('Email should be sent', () => {
     .should('have.text', 'Správa bola úspešne odoslaná.')
 })
 
-Then('You can logout', () => {
+And('User can logout', () => {
   cy.logout()
 })
