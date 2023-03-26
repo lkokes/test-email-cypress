@@ -1,18 +1,18 @@
 Feature: Login and logout feature
 
     Scenario: Successful login and logout
-        Given Navigate to login page
-        When You agree with cookies
+        Given User navigates to login page centrum.sk
+        When User agrees with cookies
         Then Login form is displayed
-        When You enter a username and password
-        And You click on login button
-        Then You should be logged in
-        Then You can logout
+        When User enters valid username and valid password
+        And User clicks on login button
+        And User should be logged in
+        And User can logout
 
     Scenario: Invalid login
-        Given Navigate to login page
-        When You agree with cookies
+        Given User navigates to login page centrum.sk
+        When User agrees with cookies
         Then Login form is displayed
-        When You enter a username and incorrect password
-        And You click on login button
-        Then You should see an error message
+        When User enters a valid username and incorrect password
+        And User clicks on login button
+        Then User should see an error message

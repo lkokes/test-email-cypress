@@ -1,10 +1,10 @@
 import {Given, When, Then, And} from 'cypress-cucumber-preprocessor/steps'
-
-Given('Navigate to login page', () => {
+        
+Given('User navigates to login page centrum.sk', () => {
     cy.visit('https://user.centrum.sk/')
 })
 
-When('You agree with cookies', () => {
+When('User agrees with cookies', () => {
   cy.get('#onetrust-accept-btn-handler')
     .click()
 })
@@ -14,7 +14,7 @@ Then('Login form is displayed', () => {
     .should('be.visible')
 })
 
-When('You enter a username and incorrect password', () => {
+When('User enters a valid username and incorrect password', () => {
   cy.get('#ego_user')
     .type(Cypress.env('username'))
   
@@ -22,12 +22,12 @@ When('You enter a username and incorrect password', () => {
     .type("invalidPassword")
 })
 
-And('You click on login button', () => {
+And('User clicks on login button', () => {
   cy.get('#ego_submit')
     .click()
 })
 
-Then('You should see an error message', () => {
+Then('User should see an error message', () => {
     cy.get('p > strong')
       .should('be.visible')
 })
